@@ -71,7 +71,7 @@ else ifeq ($(f), n)
 CFLAGS 		=
 VALGRIND 	=
 else ifeq ($(f), f)
-CFLAGS 		+=  -fsanitize=address,undefined -g3
+CFLAGS 		=  -fsanitize=address,undefined -g3
 VALGRIND 	=
 else ifeq ($(f), v)
 CFLAGS 		+= -g3
