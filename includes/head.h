@@ -14,6 +14,6 @@
 # define HEAD_H
 
 # include "libft.h"
-// # include "auto_project.h"
+# include "auto_MetamorphPlayground.h"
 
 #endif
