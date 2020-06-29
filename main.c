@@ -5,12 +5,13 @@
 #include <sys/mman.h>  // mmap, mprotect, munmap, MAP_FAILURE
 #include <unistd.h>
 
-// Machine code for "mov eax, 12345678h" followed by "ret"
-//uint8_t machine_code[] = { 0xB8, 0x78, 0x56, 0x34, 0x12, 0xC3 };
+void	hello() {
+	write(1, "Hello World !\n", 14);
+}
 
 uint32_t	new(uint32_t *size)
 {
-	return(*size);
+	return(*size * 2);
 }
 
 int main(int argc, char **argv) {
@@ -35,7 +36,7 @@ int main(int argc, char **argv) {
     }
     // Point a function pointer at the newly allocated page, then call it
     uint32_t(*fn)(uint32_t*) = (uint32_t(*)(uint32_t*)) mem;
-    uint32_t tes = 42;
+    uint32_t tes = 21;
     uint32_t result = fn(&tes);
     printf("result = %d\n", result);
 
